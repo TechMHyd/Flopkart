@@ -1,0 +1,29 @@
+<ion-menu side="right" persistent="true" [content]="content">
+    <ion-header color="danger">
+        <ion-toolbar>
+            <ion-title>Catagories</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <ion-list-header>
+                <ion-avatar item-left>
+                    <img src="">
+                </ion-avatar>
+                <h2>{{getName()}}</h2>
+                <p>username:{{getUserName()}}</p>
+            </ion-list-header>
+            <button menuClose ion-item (click)="goToHome()"><ion-icon name="home"></ion-icon>Home</button>
+            <button menuClose ion-item (click)="goToProducts()"><ion-icon name="barcode"></ion-icon>Products</button>
+            <button menuClose ion-item><ion-icon name="locate"></ion-icon>Track Order</button>
+            <button menuClose ion-item (click)="goToContact()"><ion-icon name="call"></ion-icon>Contact Us</button>
+            <button menuClose ion-item><ion-icon name="settings"></ion-icon>Settings</button>
+            <button menuClose ion-item (click)="logout()"><ion-icon name="exit"></ion-icon>Logout</button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

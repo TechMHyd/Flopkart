@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title center text-center>
+            Register Now!
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="loginContent">
+    <ion-item padding>
+        <img src="./assets/icon/icon.png">
+    </ion-item>
+    <ion-card center text-center class="ionCardLogin">
+        <ion-card-content>
+            <ion-list>
+                <form [formGroup]="authForm" novalidate>
+                    <div class="gorupInputs">
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>UserName:</ion-label>
+                            <ion-input type="text" value="" [formControl]="authForm.controls['name']" [(ngModel)]="registrationInputs.username" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['name'].hasError('required') && authForm.controls['name'].touched">* Name is required!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>Password:</ion-label>
+                            <ion-input type="password" minlength="5" maxlength="50" [formControl]="authForm.controls['password']" [(ngModel)]="registrationInputs.password" required></ion-input>
+                        </ion-item>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Mininum 6 characters!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('maxlength') && authForm.controls['password'].touched">* Maximum 6 characters!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>FirstName:</ion-label>
+                            <ion-input type="text" value="" [formControl]="authForm.controls['fname']" [(ngModel)]="registrationInputs.firstname" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['fname'].hasError('required') && authForm.controls['fname'].touched">* First Name is required!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>LastName:</ion-label>
+                            <ion-input type="text" value="" [formControl]="authForm.controls['lname']" [(ngModel)]="registrationInputs.lastname" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['lname'].hasError('required') && authForm.controls['lname'].touched">* Last Name is required!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>Email:</ion-label>
+                            <ion-input type="email" value="" [formControl]="authForm.controls['email']" [(ngModel)]="registrationInputs.email" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['email'].hasError('required') && authForm.controls['email'].touched">* Email is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['email'].hasError('pattern') && authForm.controls['email'].touched">* Please enter a valid email!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>Mobile number:</ion-label>
+                            <ion-input type="number" minlength="10" maxlength="10" [formControl]="authForm.controls['cellNo']" [(ngModel)]="registrationInputs.phnumber" required></ion-input>
+                        </ion-item>
+                        <h2 class="error-box" *ngIf="authForm.controls['cellNo'].hasError('required') && authForm.controls['cellNo'].touched">* Mobile No is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['cellNo'].hasError('minlength') && authForm.controls['cellNo'].touched">* 10 digits number</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['cellNo'].hasError('maxlength') && authForm.controls['cellNo'].touched">* 10 digits number</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom" floating>Address:</ion-label>
+                            <ion-input type="text" value="" [formControl]="authForm.controls['address']" [(ngModel)]="registrationInputs.address" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['address'].hasError('required') && authForm.controls['address'].touched">* Address is required!</h2>
+
+                    </div>
+                    <div>
+                        <button padding type="submit" [disabled]="authForm.controls.invalid" ion-button full color="primary" (click)="register()">Submit</button>
+                    </div>
+
+                </form>
+
+
+
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

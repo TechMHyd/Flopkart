@@ -1,0 +1,35 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+        <ion-title>Review Order</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <h1 style="font-weight: bolder" center text-center>Order Summary</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <h2><span style="font-weight: bolder">Product Name:</span> {{orderDetails.product.itemName}}</h2>
+            <h2><span style="font-weight: bolder">Quantity:</span> {{orderDetails.qty}}</h2>
+            <h2><span style="font-weight: bolder">Total Amount:</span> {{orderDetails.totalamt}} </h2>
+            <h2><span style="font-weight: bolder">Payment Mode:</span> COD</h2>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <h1 style="font-weight: bolder" center text-center>Customer Details</h1>
+        </ion-card-header>
+        <ion-card-content>
+            <h2><span style="font-weight: bolder">Customer Name :</span> {{customerName}}</h2>
+            <h2><span style="font-weight: bolder">Billing Address:</span> {{billingAddress}}</h2>
+            <h2><span style="font-weight: bolder">Delivery Address:</span> {{orderDetails.deliveryAddr}}</h2>
+        </ion-card-content>
+    </ion-card>
+
+    <button padding ion-button full (click)="proceed()">Confirm Oder</button>
+</ion-content>

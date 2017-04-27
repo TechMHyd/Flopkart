@@ -1,0 +1,30 @@
+page-home {
+    ion-card {
+        position: fixed;
+    }
+    .card-md .card-ios {
+        top: initial;
+        width: 100%;
+        margin-top: 5%;
+    }
+    ion-icon {
+        padding: 3%;
+    }
+    ion-item {
+        background-color: transparent;
+    }
+    input-cover activated {
+        position: fixed;
+    }
+    [noScroll] {
+        overflow: hidden;
+    }
+    img {
+        width: 70%;
+        height: 100%;
+        top: 44%;
+        margin-top: 10%;
+        margin-left: 22%;
+        padding: 2%;
+    }
+}

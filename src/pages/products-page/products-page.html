@@ -1,0 +1,27 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+        <button color="secondary" (click)="toggleMenu()" ion-button style="float: right">
+        <ion-icon name="menu"></ion-icon></button>
+        <ion-title center text-center>Products Available</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let product of allProducts">
+        <ion-row (click)='goToOneProduct(product)'>
+            <ion-col><img [src]=product.imgUrl></ion-col>
+            <ion-col>
+                <h2>{{product.itemName}}</h2>
+                <p>{{product.description}}</p>
+            </ion-col>
+            <ion-col>INR. {{product.cost}}</ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-item *ngIf="!allProducts">
+        <h1 color="danger"> No Products Listed!</h1>
+    </ion-item>
+</ion-content>

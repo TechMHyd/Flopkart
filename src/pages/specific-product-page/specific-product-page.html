@@ -1,0 +1,38 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+        <button color="secondary" (click)="toggleMenu()" ion-button style="float: right">
+        <ion-icon name="menu"></ion-icon></button>
+        <ion-title center text-center>{{pageTitle}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+
+        <img style="margin: 5%" [src]=productDetails.imgUrl>
+        <h1 center text-center>{{productDetails.itemName}}</h1>
+        <p>Item Description: {{productDetails.description}}</p>
+        <h2> Price: INR {{productDetails.cost}}</h2>
+        <h1 color="danger" center text-center padding *ngIf="productDetails.availableitems < 1">Out of Stock</h1>
+        <ion-item *ngIf="productDetails.availableitems > 1">
+            <ion-label>Qty</ion-label>
+            <ion-select [(ngModel)]="qty">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+            </ion-select>
+            <span *ngIf="maxOrderFlag"> Available {{productDetails.availableitems}} Products only</span>
+        </ion-item>
+        <ion-item *ngIf="productDetails.availableitems > 1">
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="deliveryAddr" required></ion-input>
+        </ion-item>
+
+    </ion-card>
+    <button ion-button full *ngIf="productDetails.availableitems > 1" (click)="buyNow()">Buy Now</button>
+</ion-content>

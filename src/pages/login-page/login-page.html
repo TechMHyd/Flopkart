@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title center text-center>
+            Please Login to Continue!
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen [attr.noScroll]="shouldScroll" class="loginContent">
+    <ion-item padding>
+        <img src="./assets/icon/icon.png">
+    </ion-item>
+    <ion-card class="ionCardLogin">
+        <ion-card-header padding>
+
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <form [formGroup]="authForm" novalidate>
+                    <div class="gorupInputs">
+
+                        <ion-item>
+                            <ion-label color="greenCustom">Username:</ion-label>
+                            <ion-input type="text" value="" [formControl]="authForm.controls['username']" [(ngModel)]="loginForm.username" required></ion-input>
+                        </ion-item>
+
+                        <h2 class="error-box" *ngIf="authForm.controls['username'].hasError('required') && authForm.controls['username'].touched">* Username is required!</h2>
+
+                        <ion-item>
+                            <ion-label color="greenCustom">Password:</ion-label>
+                            <ion-input type="password" minlength="5" maxlength="50" [formControl]="authForm.controls['password']" [(ngModel)]="loginForm.password" required></ion-input>
+                        </ion-item>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Mininum 6 characters!</h2>
+                        <h2 class="error-box" *ngIf="authForm.controls['password'].hasError('maxlength') && authForm.controls['password'].touched">* Maximum 6 characters!</h2>
+                    </div>
+                    <div>
+                        <button ion-button full color="primary" padding [disabled]="authForm.controls['username'].invalid || authForm.controls['password'].invalid" (click)="proceed()">Login</button>
+                    </div>
+
+                </form>
+                <button ion-button full color="primary" (click)="register()">Register</button>
+
+
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

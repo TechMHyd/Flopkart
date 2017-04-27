@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title center text-center>
+            Please Login to Continue!
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen [attr.noScroll]="shouldScroll" class="loginContent">
+    <ion-item padding>
+        <img src="./assets/icon/icon.png">
+    </ion-item>
+    <ion-card padding center text-center class="ionCardLogin">
+        <ion-card-header padding>
+
+        </ion-card-header>
+        <ion-card-content>
+            <button ion-button full (click)="fbLogIn()"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>
+            <button ion-button full color="dark" (click)="oldSchoolLogIn()">Old School Login</button>
+            <button ion-button full color="danger" (click)="register()"><ion-icon name="logo-google" ></ion-icon>Register</button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
