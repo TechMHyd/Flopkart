@@ -10,7 +10,7 @@ import { HomePage,ProductsPage,AppHomePage,ContactPage } from '../pages/pages.ex
 })
 export class MyApp {
     
-  rootPage:any = HomePage;
+  rootPage:any ;
   customerName:any;
   customerUserName: any;
   
@@ -20,6 +20,11 @@ export class MyApp {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
+      if(localStorage.getItem("jwt") === null){
+        this.rootPage = HomePage;
+      }else{
+        this.rootPage = AppHomePage;
+      }
       this.getName()
     });
   }
