@@ -9,7 +9,7 @@
     <div class="slides" [attr.noScroll]="shouldScroll">
         <ion-slides autoplay="3000" loop="true" speed="1000" [options]="{pager:true}">
             <ion-slide *ngFor="let slide of slides">
-                <img style="max-width:100%;max-height:100%;" [src]=slide.url>
+                <img style="width:1000px;height:250px;" [src]=slide.url>
             </ion-slide>
         </ion-slides>
     </div>

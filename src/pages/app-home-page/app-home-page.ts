@@ -16,13 +16,13 @@ export class AppHomePage {
       url:'http://www.shopaholicindians.com/wp-content/uploads/2014/11/PAytm-Shoes-and-Offer-at-shopaholic-Indians.png'
     },
     {
-      url:'http://www.shopaholicindians.com/wp-content/uploads/2014/11/PAytm-Shoes-and-Offer-at-shopaholic-Indians.png'
+      url:'https://www.travelguru.com/offers/affiliate-promo/images/great-shopping-deals.jpg'
     },
     {
-      url:'http://www.shopaholicindians.com/wp-content/uploads/2014/11/PAytm-Shoes-and-Offer-at-shopaholic-Indians.png'
+      url:'http://www.fridayblockbuster.com/wp-content/uploads/2015/06/banner6april.jpg'
     },
     {
-      url:'http://www.shopaholicindians.com/wp-content/uploads/2014/11/PAytm-Shoes-and-Offer-at-shopaholic-Indians.png'
+      url:'http://cdn.shopclues.net/images/mailer/clearance_191215/clerance_salebanner.jpg'
     }
   ]
   constructor(public navCtrl: NavController, public navParams: NavParams,public _menuController: MenuController) {}
